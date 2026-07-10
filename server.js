@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
 
 const User = require("./models/User");
 
@@ -270,4 +271,13 @@ async function handleTTS(bot, chatId, user, text) {
 // ─── Polling error handler ────────────────────────────────────────────────────
 bot.on("polling_error", (err) => {
   console.error("❌ Polling error:", err.message);
+});
+
+// ─── HTTP server (required by Render to detect open port) ────────────────────
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Khmer TTS Bot is running.\n");
+}).listen(PORT, () => {
+  console.log(`🌐 HTTP server listening on port ${PORT}`);
 });
