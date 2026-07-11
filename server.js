@@ -10,6 +10,7 @@ const User = require("./models/User");
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 const BOT_TOKEN   = process.env.BOT_TOKEN;
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const MONGODB_URI = process.env.MONGODB_URI;
 const TTS_API_URL = process.env.TTS_API_URL || "https://khmer-tts-api.onrender.com/tts";
 const AUDIO_DIR   = path.join(__dirname, "audio");
@@ -99,6 +100,141 @@ bot.onText(/\/start/, async (msg) => {
     console.error("❌ /start error:", err.message);
     await bot.sendMessage(chatId, "❌ មានបញ្ហាក្នុងការចាប់ផ្តើម។ សូមព្យាយាមម្តងទៀត។");
   }
+});
+
+// ─── /ask command (AI Assistant) ─────────────────────────────────────────────
+
+bot.onText(/\/ask (.+)/, async (msg, match) => {
+
+  const chatId = msg.chat.id;
+
+  const userQuestion = match[1].trim();
+
+
+  if(!userQuestion){
+
+    return bot.sendMessage(
+      chatId,
+      "សូមវាយសំណួរបន្ទាប់ពី /ask"
+    );
+
+  }
+
+
+  try {
+
+
+    await bot.sendChatAction(
+      chatId,
+      "typing"
+    );
+
+
+    const response = await axios.post(
+
+      "https://api.groq.com/openai/v1/chat/completions",
+
+      {
+
+        model:
+        "llama-3.3-70b-versatile",
+
+
+        messages:[
+
+          {
+
+            role:"system",
+
+            content:
+            `
+អ្នកជា AI assistant ដែលឆ្លើយជាភាសាខ្មែរ។
+ឆ្លើយឲ្យងាយយល់ មានរបៀបរៀបរយ។
+បើសំណួរជាបច្ចេកទេស អាចផ្តល់ code និង explanation។
+`
+
+          },
+
+
+          {
+
+            role:"user",
+
+            content:userQuestion
+
+          }
+
+        ],
+
+
+        temperature:0.7
+
+      },
+
+
+      {
+
+        headers:{
+
+          "Authorization":
+          `Bearer ${GROQ_API_KEY}`,
+
+
+          "Content-Type":
+          "application/json"
+
+        },
+
+
+        timeout:30000
+
+      }
+
+    );
+
+
+
+    const answer =
+    response.data
+    .choices[0]
+    .message
+    .content;
+
+
+
+    await bot.sendMessage(
+
+      chatId,
+
+      `🤖 AI Answer:\n\n${answer}`
+
+    );
+
+
+
+  }
+
+  catch(err){
+
+
+    console.error(
+      "❌ AI Ask Error:",
+      err.message
+    );
+
+
+    await bot.sendMessage(
+
+      chatId,
+
+      "❌ AI មិនអាចឆ្លើយបានទេ សូមព្យាយាមម្តងទៀត។"
+
+    );
+
+
+  }
+
+
 });
 
 // ─── Message handler (normal text → TTS only) ────────────────────────────────
