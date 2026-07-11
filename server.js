@@ -319,7 +319,6 @@ const welcomeText =
 - 🎙 បង្កើតសំឡេង Ai
 - 🤖 Ai Chat - សួរអ្វីក៏បាន
 
-
 • របៀបប្រើ:
 1. ផ្ញើអក្សរទៅកាន់ bot ដើម្បីបង្កើតសំឡេង និងជ្រើសរើសប្រភេទសំឡេងប្រុស ឬស្រី និងល្បឿនសំឡេង
 
@@ -330,11 +329,8 @@ const welcomeText =
 
 
 • ព័ត៌មានបន្ថែម:
-🌐 [អមតៈ - Amertak](${WEBSITE_URL})
-
-
-# បង្កើតដោយ:
-[${DEVELOPER_NAME}](${DEVELOPER_LINK})
+🌐 វេបសាយ: [អមតៈ - Amertak](${WEBSITE_URL})
+🥀 ម្ចាស់បូត: [Thavrath Amertak](${DEVELOPER_LINK})
 `;
 
 
@@ -417,7 +413,7 @@ return bot.sendMessage(
 
 chatId,
 
-"❓ សូមវាយសំណួរ បន្ទាប់ពី /ask\n\nឧទាហរណ៍:\n/ask តើអង្គរវត្តសាងសង់ដោយអ្នកណា?"
+"❓ សូមវាយសំណួរ បន្ទាប់ពី /ask\n\nឧទាហរណ៍:\n/ask របៀបប្រើ Amertak Mini Bot?"
 
 );
 
@@ -487,6 +483,13 @@ Amertak Mini Bot
 
 Website:
 https://amertak.vercel.app
+Endpoint of website:
+tools/text-to-speech-khmer (tts)
+tools/downloader
+tools/cloud
+tools/qr-code
+tools/transcribe
+
 
 Developer:
 គីន ថាវរ៉ាត់
@@ -500,6 +503,7 @@ https://t.me/amertak_network
 - រៀបចំជាចំណុចនៅពេលចាំបាច់
 - សម្រាប់ coding ផ្តល់ code និង explanation
 - កុំបង្កើតព័ត៌មានមិនពិត
+- មិនត្រូវឆ្លើយថាបង្កើតឡើងដោយក្រុមហ៑ុនទេ គឺបង្កើតដោយ developer តែម្នាក់ប៉ុណ្ណោះ បើ user សួរ
 `
 
 },
