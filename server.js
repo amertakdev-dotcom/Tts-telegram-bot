@@ -39,7 +39,7 @@ const WEBSITE_URL =
 
 
 const DEVELOPER_NAME =
-"គីន ថាវរ៉ាតើ";
+"គីន ថាវរ៉ាត់";
 
 
 const DEVELOPER_LINK =
@@ -489,7 +489,7 @@ Website:
 https://amertak.vercel.app
 
 Developer:
-គីន ថាវរ៉ាតើ
+គីន ថាវរ៉ាត់
 Telegram:
 https://t.me/amertak_network
 
