@@ -483,7 +483,7 @@ Amertak Mini Bot
 
 Website:
 https://amertak.vercel.app
-Endpoint of website:
+Link of website:
 tools/text-to-speech-khmer (tts)
 tools/downloader
 tools/cloud
@@ -1191,11 +1191,11 @@ user.voice === "km-KH-PisethNeural"
 
 ?
 
-"Piseth"
+"ᴘɪsᴇᴛʜ"
 
 :
 
-"Sreymom";
+"sʀᴇʏᴍᴏᴍ";
 
 
 
@@ -1203,9 +1203,8 @@ user.voice === "km-KH-PisethNeural"
 const caption =
 
 
-`🎙 Voice: ${voiceName}
-
-⚡ Speed: ${user.speed.toFixed(1)}x`;
+`♡ ᴠᴏɪᴄᴇ: ${voiceName}
+⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ: @amertak_bot`;
 
 
 
@@ -1225,13 +1224,13 @@ caption,
 
 
 title:
-"Khmer TTS",
+"សំឡេង Ai ;)",
 
 
 
 performer:
 
-`Amertak TTS · ${voiceName}`,
+`បង្កើតដោយ: អមតៈ - Amertak · ${voiceName}`,
 
 
 
@@ -1288,7 +1287,7 @@ err.message.includes("timeout")
 
 errorMessage =
 
-"⏱ TTS API ឆ្លើយតបយឺត។ សូមព្យាយាមម្តងទៀត។";
+"⏱ 𝚃𝚃𝚂 𝙰𝙿𝙸 𝚃𝙾𝙾𝙺 𝚃𝙾 𝙻𝙾𝙽𝙶 𝚃𝙾 𝚁𝙴𝚂𝙿𝙾𝙽𝙳។ សូមព្យាយាមម្តងទៀត។";
 
 
 }
