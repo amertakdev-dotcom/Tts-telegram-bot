@@ -23,7 +23,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 const TTS_API_URL =
 process.env.TTS_API_URL ||
-"https://khmer-tts-api.onrender.com/tts";
+"https://amertak-cdn.onrender.com/api/tts";
 
 
 const AUDIO_DIR =
