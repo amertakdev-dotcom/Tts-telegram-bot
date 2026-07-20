@@ -1,7 +1,7 @@
 {
   "name": "khmer-tts-bot",
-  "version": "1.0.0",
-  "description": "Telegram Khmer TTS Bot by Amertak Network",
+  "version": "2.0.0",
+  "description": "Telegram Khmer TTS + Downloader + OCR Bot by Amertak Network",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
