@@ -33,6 +33,7 @@ const { handleTTS } = require("./lib/tts");
 const { extractUrl, handleLinkMessage, handleDownloadCallback } = require("./lib/downloader");
 const { handlePhotoMessage } = require("./lib/ocr");
 const { setAwaitingOcr } = require("./lib/sessions");
+const { sendFormatted } = require("./lib/markdown");
 
 // ─── MongoDB ──────────────────────────────────────────────────────────────
 mongoose
@@ -176,7 +177,7 @@ https://t.me/amertak_network
     );
 
     const answer = response.data.choices[0].message.content;
-    await bot.sendMessage(chatId, `🤖 Amertak AI:\n\n${answer}`);
+    await sendFormatted(bot, chatId, `🤖 Amertak AI:\n\n${answer}`);
   } catch (err) {
     console.error("❌ AI Ask Error:", err.message);
     await bot.sendMessage(chatId, "❌ AI មិនអាចឆ្លើយបានទេ សូមព្យាយាមម្តងទៀត។");
