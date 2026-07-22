@@ -29,6 +29,9 @@ const GROQ_VISION_MODEL = process.env.GROQ_VISION_MODEL || "qwen/qwen3.6-27b";
 
 const GROQ_CHAT_MODEL = process.env.GROQ_CHAT_MODEL || "llama-3.3-70b-versatile";
 
+// Name shown in the "Prepared with ..." footer of generated worksheet PDFs.
+const AI_FOOTER_NAME = process.env.AI_FOOTER_NAME || "Amertak AI";
+
 const BOT_USERNAME = "amertak_bot";
 const WEBSITE_URL = "https://amertak.vercel.app";
 const DEVELOPER_NAME = "គីន ថាវរ៉ាត់";
@@ -54,6 +57,7 @@ module.exports = {
   API_SECRET_KEY,
   GROQ_VISION_MODEL,
   GROQ_CHAT_MODEL,
+  AI_FOOTER_NAME,
   BOT_USERNAME,
   WEBSITE_URL,
   DEVELOPER_NAME,
